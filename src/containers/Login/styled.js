@@ -41,6 +41,7 @@ export const RightContainer = styled.div`
     max-width: 50%;
 
     background: url('${BackgroundRigth}');
+    
     background-color: #1e1e1e;
 
     p{

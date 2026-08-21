@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { toast } from "react-toastify";
 import * as yup from "yup";
 import { api } from "../../services/api.js"
+import { useUser } from "../../hooks/UserContext.jsx"
 
 import { 
     Container, 
@@ -14,13 +15,14 @@ import {
     InputContainer, 
     Link,
 } from './styled';
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/bem-vinda-burguer.png';
 
 import { Button } from '../../components/Button'
 
 
 export function Login() {
     const navigate = useNavigate()
+    const { putUserData }  = useUser()
     
     const schema = yup.object({
   email: yup.string().email('Digite um email válido').required('O email é obrigatório'),
@@ -36,7 +38,8 @@ export function Login() {
    console.log(errors);
 
   const onSubmit = async (data) => {
-    const response = await toast.promise(api.post('/sessions', {
+    const { data: UserData } = await toast.promise(
+        api.post('/sessions', {
         email: data.email,
         password: data.password,
     }),
@@ -52,9 +55,10 @@ export function Login() {
         },
         error: 'Email ou Senha Incorretos'
     },
-)
+);
+putUserData(UserData);
     
-    console.log(response);
+  //  localStorage.setItem('token',  token);
   };
 
 
