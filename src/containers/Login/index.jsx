@@ -35,7 +35,7 @@ export function Login() {
           formState:{ errors } } = useForm({
     resolver: yupResolver(schema)
   });
-   console.log(errors);
+   
 
   const onSubmit = async (data) => {
     const { data: UserData } = await toast.promise(

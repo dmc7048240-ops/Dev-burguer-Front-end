@@ -1,16 +1,18 @@
-import CategoryCarousel from "../../components/CategoryCarousel/index.jsx";
-import OffersCarousel from "../../components/OffersCarousel/index.jsx";
+import  CategoryCarousel  from "../../components/CategoryCarousel";
+import  OffersCarousel  from "../../components/OffersCarousel";
+
 import { 
     Container, 
     Banner, 
     Content,
 
  } from "../Home/styles.js";
-import { useUser } from "../../hooks/UserContext.jsx"
+
+
 
 export function Home(){
 
-    console.log(useUser);
+   
 
     return (
         <main>
