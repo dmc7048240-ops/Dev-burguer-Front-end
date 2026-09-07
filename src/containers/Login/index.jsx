@@ -48,7 +48,11 @@ export function Login() {
         success: {
             render(){
                 setTimeout(() => {
-                    navigate('/');
+                    if(UserData?.admin){
+                        navigate('/admin/pedidos');
+                    } else{
+                        navigate('/');
+                    }
                 }, 2000);
                 return 'Bem-vindo(a)';
             },

@@ -8,7 +8,7 @@ const iconBounce = keyframes`
 `;
 
 export const Container = styled.header`
-  background-color: rgba(31, 31, 31, 0.95);
+  background-color: ${props => props.theme.mainBlack};
   backdrop-filter: blur(10px);
   width: 100%;
   height: 72px;

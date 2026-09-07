@@ -101,10 +101,7 @@ export function Menu(){
                     key={category.id}
                     $isActiveCategory={category.id === activeCategory}
                     onClick={() => {
-                        console.log('CATEGORIA CLICADA:',
-                            category.id,
-                            category.name
-                        );
+                        
                         navigate(
                             {
                                 pathname: '/cardapio',

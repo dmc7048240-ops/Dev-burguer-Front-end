@@ -41,10 +41,10 @@ export const Container = styled.div`
   min-height: 100vh;
   background-color: #f0f0f0;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.65),
-      rgba(255, 255, 255, 0.65)
-    ),
-    url('${Background}');
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.6)
+      ),
+      url('${Background}');
   background-attachment: fixed;
   animation: ${fadeInPage} 0.6s ease-out forwards;
 `;
